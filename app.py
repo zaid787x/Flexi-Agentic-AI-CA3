@@ -198,6 +198,9 @@ def create_app():
 
 if __name__ == "__main__":
     app = create_app()
+    port = int(os.environ.get("PORT", 7860))
     app.launch(
+        server_name="0.0.0.0",
+        server_port=port,
         css="footer { display: none !important; } .settings-button { display: none !important; }"
     )
